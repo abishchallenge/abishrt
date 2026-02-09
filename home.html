@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple File Links — Vertical List</title>
+  <style>
+
+a {
+  color: #007bff; /* A vibrant blue to stand out */
+  text-decoration: none; /* Removes the default underline */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color changes */
+  cursor: pointer; /* Ensures the cursor indicates it's a clickable element */
+}
+
+a:hover {
+  color: #0056b3; /* A darker blue on hover */
+  text-decoration: underline; /* Adds an underline on hover for emphasis */
+}
+
+a:active {
+  color: #004085; /* An even darker blue when the link is clicked */
+}
+
+a:visited {
+  color: #6610f2; /* A subtle purple to indicate a visited link */
+}
+
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#2563eb;--text:#0f1724}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;smooth-font-sizing:antialiased;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+
+    .wrap{width:95%;max-width:720px;margin:28px auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--card);border-radius:10px;box-shadow:0 6px 18px rgba(15,23,36,0.06)}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:44px;height:44px;border-radius:8px;background:var(--accent);color:white;display:grid;place-items:center;font-weight:700}
+    h1{font-size:1rem}
+
+    /* keep nav visible on all sizes and simple */
+    nav{display:flex;gap:8px;align-items:center}
+    nav a{font-size:0.9rem;color:var(--accent);text-decoration:none;padding:6px 8px;border-radius:6px}
+
+    .search{margin-left:8px}
+    .search input{padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,36,0.06);width:200px}
+
+    main{margin-top:16px}
+    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 10px 24px rgba(15,23,36,0.06)}
+
+    /* vertical file list */
+    .files{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+    .file{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.04)}
+    .file .meta{flex:1}
+    .file h3{font-size:0.95rem;margin-bottom:4px}
+    .file p{font-size:0.85rem;color:rgba(15,23,36,0.6)}
+    .file a.open{padding:8px 10px;background:var(--accent);color:white;border-radius:6px;text-decoration:none}
+
+    footer{margin-top:18px;text-align:center;color:rgba(15,23,36,0.6);font-size:0.9rem}
+
+    /* responsive tweaks */
+    @media (max-width:600px){
+      .search input{width:120px}
+      header{flex-direction:column;align-items:flex-start;gap:10px}
+      nav{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><img width="50" src="https://abishr.netlify.app/assests/uploads/img/abish.jpg"></div>
+        <div>
+				
+          <h1><a href="https://wa.me/qr/RU5KR7Z547RPJ1" target="blank"><b>ABISH</b></a></h1>
+          <div style="font-size:0.85rem;color:rgba(15,23,36,0.6)">Download Your Pdf File here</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:8px">
+        <nav aria-label="primary navigation">
+          <a href="#" data-filter="all">All</a>
+          <a href="#" data-filter="docs">Docs</a>
+          <a href="#" data-filter="images">Images</a>
+          <a href="#" data-filter="others">Others</a>
+        </nav>
+        <div class="search">
+          <input id="search" type="search" placeholder="Search files..." aria-label="Search files" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="card" aria-labelledby="files-title">
+        <h2 id="files-title" style="font-size:1.05rem">Available files</h2>
+        <p style="margin-top:6px;color:rgba(15,23,36,0.6)">If Your File is missing, then conduct Admin <a href="https://wa.me/qr/RU5KR7Z547RPJ1" target="blank"><b>ABISH</b></a></p>
+
+<div class="files" id="filesList">
+
+<!--<div class="file" data-type="docs">
+<div class="meta">
+	<h3></h3>
+</div>
+	<a class="open" href="files/" target="_blank" rel="noopener noreferrer">Open</a>
+</div>
+
+<!--<div class="file" data-type="docs">
+<div class="meta">
+	<h3></h3>
+</div>
+	<a class="open" href="files/" target="_blank" rel="noopener noreferrer">Open</a>
+</div>
+
+<!--<div class="file" data-type="docs">
+<div class="meta">
+	<h3></h3>
+</div>
+	<a class="open" href="files/" target="_blank" rel="noopener noreferrer">Open</a>
+</div>
+
+<!--<div class="file" data-type="docs">
+<div class="meta">
+	<h3></h3>
+</div>
+	<a class="open" href="files/" target="_blank" rel="noopener noreferrer">Open</a>
+</div>
+
+<!--<div class="file" data-type="docs">
+<div class="meta">
+	<h3></h3>
+</div>
+	<a class="open" href="files/" target="_blank" rel="noopener noreferrer">Open</a>
+</div>
+
+<!--<div class="file" data-type="docs">
+<div class="meta">
+	<h3></h3>
+</div>
+	<a class="open" href="files/" target="_blank" rel="noopener noreferrer">Open</a>
+</div>
+
+-->
+</div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://wa.me/qr/RU5KR7Z547RPJ1" target="blank"><b>Contact Us On Whatsapp</b></a><br>
+      © <span id="year"></span>; All rights reserved. Design & Develped by <a href="https://wa.me/qr/RU5KR7Z547RPJ1" target="blank"><b>ABISH</b></a>
+    </footer>
+  </div>
+
+  <script>
+    // copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const searchInput = document.getElementById('search');
+    const filesList = document.getElementById('filesList');
+    const fileNodes = Array.from(filesList.querySelectorAll('.file'));
+
+    function filterFiles(query, typeFilter){
+      const q = (query || '').trim().toLowerCase();
+      fileNodes.forEach(node =>{
+        const title = node.querySelector('h3').textContent.toLowerCase();
+        const desc = node.querySelector('p').textContent.toLowerCase();
+        const type = node.dataset.type || '';
+        let match = true;
+        if(typeFilter && typeFilter !== 'all') match = (type === typeFilter);
+        if(q) match = match && (title.includes(q) || desc.includes(q));
+        node.style.display = match ? 'flex' : 'none';
+      })
+    }
+
+    // search
+    searchInput.addEventListener('input', (e)=> filterFiles(e.target.value, null));
+
+    // simple nav filter
+    document.querySelectorAll('nav a[data-filter]').forEach(a =>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const f = a.dataset.filter;
+        filterFiles(searchInput.value, f);
+      })
+    })
+  </script>
+</body>
+</html>
